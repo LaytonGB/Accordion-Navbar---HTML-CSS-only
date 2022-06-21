@@ -1,0 +1,79 @@
+:root {
+  --blue: #3498db;
+  --background: #081118;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: var(--background);
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--blue);
+  height: 5rem;
+  font-size: 2rem;
+}
+.navbar a {
+  text-decoration: none;
+  color: white;
+}
+.title {
+  margin: auto 2rem;
+}
+
+.navbar-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 1rem;
+  padding: 2rem 2rem;
+}
+.nav-item {
+  list-style: none;
+  padding: 0 1rem;
+  height: 2rem;
+}
+.nav-item:not(:target) .btn {
+  display: block;
+}
+.nav-item:not(:target) .hide-btn,
+.nav-item:target .btn {
+  display: none;
+}
+
+.nav-item__sub {
+  transform: translateY(.5rem);
+}
+.nav-item__sub>a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s, padding 0.3s;
+  display: flex;
+  flex-direction: column;
+  background: var(--grey);
+  padding: 0 0.5rem;
+  width: 6.5rem;
+}
+.nav-item__sub>a:first-child {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+.nav-item__sub>a:last-child {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+.nav-item:target .nav-item__sub>a {
+  max-height:5rem;
+  padding: 0.5rem;
+}
+.nav-item:target .nav-item__sub>a:hover {
+  max-height:5rem;
+  padding: 0.7rem;
+}
